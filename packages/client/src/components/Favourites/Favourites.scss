@@ -1,0 +1,51 @@
+@use "../../styles/utils/variables";
+@use "../../styles/utils/mixins";
+@use "../../styles/utils/placeholders";
+
+.Favourites {
+  padding: 25px 0 65px;
+
+  @include mixins.on-desktop {
+    padding-bottom: 80px;
+  }
+
+  &__breadcrumbs {
+    margin-bottom: 24px;
+
+    @include mixins.on-tablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__title {
+    @extend %h1;
+
+    margin-bottom: 8px;
+  }
+
+  &__items {
+    @extend %body-text;
+
+    margin-bottom: 32px;
+    color: variables.$gray-secondary;
+
+    @include mixins.on-tablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__catalog {
+    margin-bottom: 24px;
+
+    @include mixins.on-tablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__empty-message {
+    @extend %h3;
+
+    font-family: Mont-Regular, "Helvetica Neue", sans-serif;
+    color: variables.$gray-secondary;
+  }
+}

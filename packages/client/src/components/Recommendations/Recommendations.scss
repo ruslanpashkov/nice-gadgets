@@ -1,0 +1,66 @@
+@use "../../styles/utils/variables";
+@use "../../styles/utils/placeholders";
+@use "../../styles/utils/mixins";
+
+.Recommendations {
+  display: block;
+
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    @extend %h2;
+
+    color: variables.$gray-primary;
+  }
+
+  &__controllers {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__button {
+    cursor: pointer;
+    border: 1px solid variables.$gray-icons-placeholders;
+    transition:
+      color variables.$default-transition ease-in-out,
+      border-color variables.$default-transition ease-in-out;
+
+    &--disabled,
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+
+    @media (hover: hover) {
+      &:hover:not(:disabled) {
+        border-color: variables.$gray-primary;
+      }
+    }
+  }
+
+  &__error-message {
+    @extend %h4;
+
+    padding: 200px;
+    font-family: Mont-Regular, "Helvetica Neue", sans-serif;
+    color: variables.$gray-secondary;
+    text-align: center;
+  }
+
+  &__loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+  }
+
+  &__slider {
+    display: flex;
+  }
+}

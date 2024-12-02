@@ -1,0 +1,46 @@
+{
+  "name": "@nice-gadgets/server",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "migrations-up": "npx sequelize db:migrate",
+    "seeders-up": "npx sequelize db:seed:all",
+    "migrations-seeders": "npm run migrations-up && npm run seeders-up",
+    "format": "prettier . --write",
+    "lint": "eslint .",
+    "build": "swc src -d dist --strip-leading-paths",
+    "build-dev": "cross-env NODE_ENV=development npm run build && node --inspect dist/index.js",
+    "dev": "nodemon --ext ts --exec \"npm run build-dev\"",
+    "start": "npm run build && cross-env NODE_ENV=production node dist/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^5.0.1",
+    "pg": "^8.13.1",
+    "sequelize": "^6.37.5",
+    "sequelize-typescript": "^2.1.6"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "@swc-node/register": "^1.10.9",
+    "@swc/cli": "^0.5.1",
+    "@swc/core": "^1.9.3",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.1",
+    "@typescript-eslint/eslint-plugin": "^8.16.0",
+    "@typescript-eslint/parser": "^8.16.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.15.0",
+    "globals": "^15.12.0",
+    "nodemon": "^3.1.7",
+    "prettier": "^3.4.1",
+    "sequelize-cli": "^6.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.16.0"
+  }
+}

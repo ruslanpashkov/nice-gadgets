@@ -1,0 +1,20 @@
+@use "../../styles/utils/mixins";
+@use "../../styles/utils/variables";
+
+.Container {
+  overflow: hidden;
+
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  margin-inline: auto;
+  padding-inline: variables.$container-padding-mobile;
+
+  @include mixins.on-tablet {
+    padding-inline: variables.$container-padding-tablet;
+  }
+
+  @include mixins.on-desktop {
+    padding-inline: variables.$container-padding-desktop;
+  }
+}

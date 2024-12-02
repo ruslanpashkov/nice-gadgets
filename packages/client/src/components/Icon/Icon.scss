@@ -1,0 +1,22 @@
+@use "../../styles/utils/variables";
+@use "../../styles/utils/mixins";
+
+.Icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: variables.$gray-primary;
+
+    transition: color variables.$default-transition ease-in-out;
+  }
+
+  &[class*="disabled"] > svg {
+    color: variables.$gray-icons-placeholders;
+  }
+}

@@ -1,0 +1,13 @@
+@use "../../styles/utils/variables";
+@use "../../styles/utils/keyframes";
+
+.Loader {
+  display: inline-block;
+
+  border-color: variables.$gray-primary;
+  border-style: solid;
+  border-bottom-color: variables.$yellow-color;
+  border-radius: 50%;
+
+  animation: rotation 1s linear infinite;
+}

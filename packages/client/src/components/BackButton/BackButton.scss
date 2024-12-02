@@ -1,0 +1,24 @@
+@use "../../styles/utils/variables";
+@use "../../styles/utils/mixins";
+@use "../../styles/utils/placeholders";
+
+.BackButton {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+
+  color: variables.$gray-secondary;
+
+  transition: color variables.$default-transition ease-in-out;
+
+  &__text {
+    @extend %small-text;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: variables.$gray-primary;
+    }
+  }
+}

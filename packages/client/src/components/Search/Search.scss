@@ -1,0 +1,130 @@
+@use "../../styles/utils/variables";
+@use "../../styles/utils/mixins";
+@use "../../styles/utils/placeholders";
+
+.Search {
+  @include mixins.on-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__input {
+    @extend %body-text;
+
+    width: 200px;
+    height: variables.$header-height-mobile;
+    padding-inline: 32px;
+
+    color: variables.$gray-secondary;
+
+    border: 1px solid variables.$gray-elements;
+
+    transition:
+      border variables.$default-transition ease-in-out,
+      color variables.$default-transition ease-in-out;
+
+    @include mixins.on-tablet {
+      width: 150px;
+      padding-inline: 48px;
+    }
+
+    @include mixins.on-desktop {
+      width: 300px;
+      height: variables.$header-height-desktop;
+    }
+
+    &::placeholder {
+      color: variables.$gray-icons-placeholders;
+      transition: color variables.$default-transition ease-in-out;
+    }
+
+    &:focus {
+      color: variables.$gray-primary;
+      outline: none;
+
+      &::placeholder {
+        color: variables.$gray-secondary;
+      }
+    }
+  }
+
+  &__icon,
+  &__clear {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &__icon {
+    pointer-events: none;
+    left: 8px;
+
+    @include mixins.on-desktop {
+      left: 16px;
+    }
+  }
+
+  &__clear {
+    pointer-events: all;
+    right: 8px;
+
+    @include mixins.on-desktop {
+      right: 16px;
+    }
+  }
+
+  &__dropdown {
+    pointer-events: none;
+
+    position: absolute;
+    top: 100%;
+    right: 0;
+
+    overflow: hidden;
+
+    width: 100%;
+    min-width: 300px;
+
+    visibility: hidden;
+    opacity: 0;
+    background: variables.$white-color;
+    border: 1px solid variables.$gray-elements;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    transition:
+      opacity variables.$default-transition ease-in-out,
+      transform variables.$default-transition ease-in-out,
+      visibility 0s linear variables.$default-transition;
+
+    &--opened {
+      pointer-events: all;
+
+      transform: translateY(4px);
+
+      visibility: visible;
+      opacity: 1;
+
+      transition:
+        opacity variables.$default-transition ease-in-out,
+        transform variables.$default-transition ease-in-out,
+        visibility 0s linear 0s;
+    }
+  }
+
+  &__loading {
+    padding: 12px;
+    color: variables.$gray-secondary;
+    text-align: center;
+  }
+}

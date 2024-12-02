@@ -1,0 +1,73 @@
+@use "../../styles/utils/variables";
+@use "../../styles/utils/mixins";
+@use "../../styles/utils/placeholders";
+@use "../../styles/utils/keyframes";
+
+.NotFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+  padding-block: 24px;
+
+  background-color: variables.$white-color;
+
+  &__title {
+    @extend %h1;
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 100px;
+    line-height: 1;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.25);
+
+    background: -webkit-repeating-linear-gradient(
+      -45deg,
+      #71b7e6,
+      #69a6ce,
+      #b98acc,
+      #ee8176,
+      #b98acc,
+      #69a6ce,
+      #9b59b6
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 400%;
+
+    animation: animate-404 10s ease-in-out infinite;
+
+    -webkit-text-fill-color: transparent;
+
+    @include mixins.on-tablet {
+      font-size: 200px;
+      line-height: 200px;
+    }
+
+    @include mixins.on-desktop {
+      font-size: 300px;
+      line-height: 300px;
+    }
+  }
+
+  &__subtitle {
+    @extend %h2;
+
+    margin-bottom: 16px;
+    color: variables.$gray-primary;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.25);
+    text-transform: uppercase;
+  }
+
+  &__description {
+    @extend %h4;
+
+    margin-bottom: 20px;
+    color: variables.$gray-primary;
+  }
+}

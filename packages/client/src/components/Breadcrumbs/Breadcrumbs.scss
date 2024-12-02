@@ -1,0 +1,43 @@
+@use "../../styles/utils/variables";
+@use "../../styles/utils/placeholders";
+@use "../../styles/utils/mixins";
+
+.Breadcrumbs {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+
+  &__item {
+    overflow: hidden;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    padding: 4px;
+
+    &--full {
+      min-width: max-content;
+    }
+  }
+
+  &__crumb {
+    @extend %small-text;
+
+    overflow: hidden;
+    color: variables.$gray-secondary;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+
+    &--active {
+      color: variables.$gray-primary;
+    }
+
+    &--disabled {
+      pointer-events: none;
+    }
+  }
+}

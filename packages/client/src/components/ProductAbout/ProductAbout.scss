@@ -1,0 +1,102 @@
+@use "../../styles/utils/variables";
+@use "../../styles/utils/mixins";
+@use "../../styles/utils/placeholders";
+
+.ProductAbout {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+
+  @include mixins.on-tablet {
+    gap: 64px;
+  }
+
+  @include mixins.on-desktop {
+    flex-direction: row;
+  }
+
+  &__content {
+    display: block;
+
+    @include mixins.on-desktop {
+      display: grid;
+      grid-template-columns: repeat(24, 1fr);
+      column-gap: 16px;
+    }
+  }
+
+  &__about-info {
+    grid-column: 1 / 13;
+  }
+
+  &__about-title {
+    @extend %h3;
+
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid variables.$gray-elements;
+  }
+
+  &__about-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 56px;
+
+    @include mixins.on-tablet {
+      margin-bottom: 64px;
+    }
+
+    @include mixins.on-desktop {
+      margin-bottom: 0;
+    }
+  }
+
+  &__description-title {
+    @extend %h4;
+
+    margin-bottom: 16px;
+  }
+
+  &__description-text {
+    @extend %body-text;
+
+    color: variables.$gray-secondary;
+  }
+
+  &__specs-info {
+    grid-column: 14 / 24;
+  }
+
+  &__specs-title {
+    @extend %h3;
+
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid variables.$gray-elements;
+  }
+
+  &__specs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__specs-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__tech-specs-title {
+    @extend %body-text;
+
+    color: variables.$gray-secondary;
+  }
+
+  &__tech-specs-text {
+    @extend %body-text;
+
+    color: variables.$gray-primary;
+  }
+}

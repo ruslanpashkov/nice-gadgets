@@ -1,0 +1,48 @@
+@use "../../styles/utils/mixins";
+
+.ProductLayout {
+  padding-block: 24px 56px;
+
+  @include mixins.on-tablet {
+    padding-bottom: 64px;
+  }
+
+  @include mixins.on-desktop {
+    padding-bottom: 80px;
+  }
+
+  &__loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &__header {
+    margin-bottom: 16px;
+  }
+
+  &__breadcrumbs {
+    margin-bottom: 24px;
+
+    @include mixins.on-tablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__details {
+    margin-bottom: 64px;
+
+    @include mixins.on-tablet {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__about {
+    margin-bottom: 64px;
+
+    @include mixins.on-tablet {
+      margin-bottom: 80px;
+    }
+  }
+}

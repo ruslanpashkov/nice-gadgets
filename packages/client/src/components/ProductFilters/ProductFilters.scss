@@ -1,0 +1,118 @@
+@use "../../styles/utils/variables";
+@use "../../styles/utils/mixins";
+@use "../../styles/utils/placeholders";
+@use "../../styles/utils/keyframes";
+
+.ProductFilters {
+  display: flex;
+  gap: 16px;
+
+  &__sort-by {
+    width: 136px;
+
+    @include mixins.on-tablet {
+      width: 176px;
+    }
+  }
+
+  &__limit {
+    width: 136px;
+
+    @include mixins.on-desktop {
+      width: 128px;
+    }
+  }
+
+  &__label {
+    @extend %small-text;
+
+    margin-bottom: 4px;
+    color: variables.$gray-secondary;
+    white-space: nowrap;
+  }
+
+  &__field {
+    @extend %body-text;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 12px 10px;
+
+    border: 1px solid variables.$gray-icons-placeholders;
+
+    transition: border variables.$default-transition ease-in-out;
+
+    @media (hover: hover) {
+      &:hover {
+        border-color: variables.$gray-primary;
+      }
+    }
+  }
+
+  &__arrow {
+    transform: rotate(180deg);
+    transition: transform variables.$default-transition ease-in-out;
+
+    &--opened {
+      transform: rotate(360deg);
+    }
+  }
+
+  &__option {
+    position: relative;
+  }
+
+  &__list {
+    position: absolute;
+    z-index: variables.$z-index-modal;
+    top: 4px;
+    transform: translateX(-20px);
+
+    width: 100%;
+
+    visibility: hidden;
+    opacity: 0;
+    background-color: variables.$white-color;
+    border: 1px solid variables.$gray-elements;
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.05);
+
+    transition: variables.$default-transition ease-in-out;
+
+    &--opened {
+      transform: translateX(0);
+      visibility: visible;
+      opacity: 1;
+      transition: variables.$default-transition ease-in-out;
+    }
+  }
+
+  &__item {
+    @extend %body-text;
+
+    cursor: pointer;
+    width: 100%;
+    color: variables.$gray-secondary;
+    transition:
+      color variables.$default-transition ease-in-out,
+      background-color variables.$default-transition ease-in-out;
+
+    @media (hover: hover) {
+      &:hover {
+        color: variables.$gray-primary;
+        background-color: variables.$gray-background;
+      }
+    }
+  }
+
+  &__link {
+    @include mixins.square(100%);
+
+    display: block;
+    padding: 6px 12px;
+  }
+}

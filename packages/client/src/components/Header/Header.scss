@@ -1,0 +1,100 @@
+@use "../../styles/utils/variables";
+@use "../../styles/utils/mixins";
+
+.Header {
+  position: sticky;
+  z-index: variables.$z-index-header;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: variables.$header-height-mobile;
+
+  background-color: variables.$white-color;
+  border-block: 1px solid variables.$gray-elements;
+
+  @include mixins.on-desktop {
+    height: variables.$header-height-desktop;
+  }
+
+  &__logo {
+    padding-inline: 16px;
+
+    @include mixins.on-desktop {
+      padding-inline: 24px;
+    }
+  }
+
+  &__branding {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    height: 100%;
+
+    @include mixins.on-desktop {
+      gap: 24px;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include mixins.on-tablet {
+      display: block;
+      height: 100%;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__search {
+    display: flex;
+
+    @include mixins.on-tablet {
+      @include mixins.square(100%);
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 100%;
+
+    box-shadow: -1px 0 0 variables.$gray-elements;
+
+    @include mixins.on-tablet {
+      display: none;
+    }
+  }
+
+  &__toggler {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: variables.$white-color;
+  }
+
+  &__icons {
+    display: none;
+
+    @include mixins.on-tablet {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+  }
+}

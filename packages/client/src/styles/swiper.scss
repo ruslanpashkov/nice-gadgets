@@ -1,0 +1,22 @@
+@use "utils/variables";
+@use "utils/mixins";
+
+.swiper-pagination {
+  display: block;
+}
+
+.swiper-pagination-bullets .swiper-pagination-bullet {
+  width: 18px;
+  height: 5px;
+  margin-block: 8px;
+
+  background-color: variables.$gray-primary;
+  border-radius: 0;
+
+  transition: opacity variables.$default-transition ease-in-out;
+
+  @include mixins.on-desktop {
+    width: 20px;
+    height: 8px;
+  }
+}

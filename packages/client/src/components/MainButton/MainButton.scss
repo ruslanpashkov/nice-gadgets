@@ -1,0 +1,31 @@
+@use "../../styles/utils/variables";
+@use "../../styles/utils/placeholders";
+@use "../../styles/utils/mixins";
+
+.MainButton {
+  @extend %buttons;
+
+  display: block;
+
+  padding: 10px 25px;
+
+  color: variables.$white-color;
+
+  background-color: variables.$gray-primary;
+
+  transition: box-shadow variables.$default-transition ease-in-out;
+
+  @include mixins.on-tablet {
+    padding-inline: 35px;
+  }
+
+  @include mixins.on-desktop {
+    padding-inline: 45px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: 0 3px 13px 0 rgba(23, 32, 49, 0.4);
+    }
+  }
+}

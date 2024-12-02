@@ -1,0 +1,102 @@
+@use "mixins";
+
+%h1 {
+  font-family: Mont-Bold, "Helvetica Neue", sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  font-style: normal;
+  line-height: 41px;
+  letter-spacing: -0.01em;
+
+  @include mixins.on-tablet {
+    font-family: Mont-Bold, "Helvetica Neue", sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    font-style: normal;
+    line-height: 56px;
+    letter-spacing: -0.01em;
+  }
+}
+
+%h2 {
+  font-family: Mont-Bold, "Helvetica Neue", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  font-style: normal;
+  line-height: 31px;
+
+  @include mixins.on-tablet {
+    font-family: Mont-Bold, "Helvetica Neue", sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    font-style: normal;
+    line-height: 41px;
+    letter-spacing: -0.01em;
+  }
+}
+
+%h3 {
+  font-family: Mont-SemiBold, "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 26px;
+
+  @include mixins.on-tablet {
+    font-family: Mont-Bold, "Helvetica Neue", sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    font-style: normal;
+    line-height: 31px;
+  }
+}
+
+%h4 {
+  font-family: Mont-SemiBold, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 20px;
+
+  @include mixins.on-tablet {
+    font-family: Mont-SemiBold, "Helvetica Neue", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    font-style: normal;
+    line-height: 26px;
+  }
+}
+
+%uppercase {
+  font-family: Mont-Bold, "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+%buttons {
+  font-family: Mont-SemiBold, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 21px;
+}
+
+%body-text {
+  font-family: Mont-Regular, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 21px;
+}
+
+%small-text {
+  font-family: Mont-SemiBold, "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 15px;
+}

@@ -1,0 +1,40 @@
+@use "../../styles/utils/variables";
+@use "../../styles/utils/placeholders";
+@use "../../styles/utils/mixins";
+
+.DropdownItem {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 8px 16px;
+
+  background-color: variables.$white-color;
+
+  transition: background-color variables.$default-transition ease-in-out;
+
+  &__image {
+    @include mixins.square(48px);
+
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__description {
+    @extend %body-text;
+
+    display: inline-block;
+  }
+
+  &__price {
+    @extend %h4;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: variables.$gray-background;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@use "../../styles/utils/mixins";
+
+.Main {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  padding-block: 32px;
+
+  @include mixins.on-tablet {
+    gap: 64px;
+    padding-block: 56px;
+  }
+
+  @include mixins.on-desktop {
+    gap: 80px;
+  }
+}

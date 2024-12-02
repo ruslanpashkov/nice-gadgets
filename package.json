@@ -1,0 +1,10 @@
+{
+  "name": "nice-gadgets",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r --sequential build",
+    "lint": "pnpm -r --parallel lint",
+    "clean": "pnpm -r --parallel clean"
+  }
+}

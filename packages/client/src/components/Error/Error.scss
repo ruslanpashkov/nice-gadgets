@@ -1,0 +1,20 @@
+@use "../../styles/utils/variables";
+@use "../../styles/utils/mixins";
+@use "../../styles/utils/placeholders";
+
+.Error {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  align-items: center;
+
+  &__message {
+    @extend %h2;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
